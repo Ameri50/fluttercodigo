@@ -5,10 +5,30 @@ class HomeScreen  extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    const fontSizeVar25 = TextStyle(fontSize: 30);
+
     return Scaffold(
-      backgroundColor:Colors.teal ,
+      backgroundColor: Colors.teal,
+      appBar: AppBar(
+        title: const Text('Mi primera app'),
+      ),
       body: Center(
-        child: Text('Hola Mundo parte 2'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'Click para cambiar contador',
+              style: fontSizeVar25,
+            ),
+            const Text('30'),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          debugPrint('hola mis amiguitos');
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
